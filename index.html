@@ -1,104 +1,250 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>My Portfolio</title>
+  <title>Longyin Zhang - My Portfolio</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <!-- Google Fonts for a modern look -->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
   <style>
     body {
-      background-color: #f2f2f2;
+      background-color: #f8f9fa; /* Very light grey background */
+      font-family: 'Open Sans', sans-serif; /* Modern, readable body font */
+      color: #343a40; /* Dark grey text for contrast */
+      line-height: 1.6; /* Improved line spacing for readability */
     }
 
     .container {
-      padding: 50px;
-      font-size: 12px;
+      padding: 30px; /* Reduced padding slightly for a more compact look */
+      font-size: 1rem; /* Base font size, equivalent to 16px */
+      max-width: 1200px; /* Max width to prevent content from stretching too wide on large screens */
+      margin-top: 30px;
+      margin-bottom: 30px;
+      background-color: #fff; /* White background for the content area */
+      border-radius: 10px; /* Slightly more rounded corners for a softer feel */
+      box-shadow: 0 5px 15px rgba(0,0,0,.08); /* More pronounced, but still subtle shadow */
+    }
+
+    h1, h2 {
+      font-family: 'Poppins', sans-serif; /* Modern, bold heading font */
+      color: #212529; /* Darker heading color */
+      margin-bottom: 15px;
     }
 
     h1 {
-      font-size: 36px;
+      font-size: 2.5rem; /* Larger and more impactful H1 */
+      border-bottom: 2px solid #e9ecef; /* Subtle separating line */
+      padding-bottom: 10px;
+      margin-top: 25px; /* Spacing for the first H1 */
     }
 
     h2 {
-      font-size: 24px;
+      font-size: 1.8rem; /* Clear H2 size */
+      margin-top: 20px;
+      margin-bottom: 15px;
     }
 
     p {
-      font-size: 16px;
+      font-size: 1rem;
+      margin-bottom: 15px;
     }
 
     ul {
       list-style-type: none;
       padding: 0;
+      margin-bottom: 20px;
     }
 
     a {
       text-decoration: none;
-      color: #000;
+      color: #007bff; /* Standard Bootstrap primary blue */
+      transition: color 0.3s ease, text-decoration 0.3s ease; /* Smooth transition for hover effects */
+    }
+
+    a:hover {
+      color: #0056b3; /* Darker blue on hover */
+      text-decoration: underline;
     }
 
     .btn {
-      background-color: #000;
+      background-color: #007bff;
       color: #fff;
       padding: 10px 20px;
       border-radius: 5px;
+      border: none; /* Remove default button border */
+      transition: background-color 0.3s ease;
     }
+
+    .btn:hover {
+      background-color: #0056b3;
+      color: #fff;
+    }
+
     .urlstyle {
-      color: blue;
+      color: #007bff;
       text-decoration: underline;
     }
+
+    .urlstyle:hover {
+      color: #0056b3;
+    }
+
     .logo {
-      height: 90px;
+      height: 60px; /* Adjusted height for better visual balance */
+      margin-right: 15px; /* Space between logos */
+      vertical-align: middle;
+      filter: drop-shadow(0 2px 2px rgba(0,0,0,.05)); /* Subtle shadow for logos */
+    }
+
+    .profile-img {
+      height: 200px;
+      width: auto; /* Maintain aspect ratio */
+      border-radius: 8px; /* Slightly rounded corners for the image */
+      box-shadow: 0 4px 8px rgba(0,0,0,.1); /* Subtle shadow for the image */
+      margin-bottom: 25px; /* Space below the image */
+      display: block; /* Ensures margin works correctly */
+      margin-left: auto; /* Centers image on small screens */
+      margin-right: auto; /* Centers image on small screens */
+    }
+
+    .emoji {
+      font-size: 1.2em; /* Make emojis slightly larger for emphasis */
+      vertical-align: middle; /* Align emojis vertically with text */
+      margin-right: 8px; /* Space after emoji */
+      line-height: 1; /* Ensure emoji does not affect line height too much */
+    }
+
+    .research-item {
+        margin-bottom: 10px; /* Spacing between research entries */
+        line-height: 1.5; /* Good line height for text-heavy sections */
+    }
+
+    /* Column padding for better spacing */
+    .col-md-4, .col-md-8 {
+        padding: 20px;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+        .container {
+            padding: 20px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        .profile-img {
+            margin-bottom: 20px; /* Adjust margin for smaller screens */
+        }
+        h1 {
+            font-size: 2rem;
+        }
+        h2 {
+            font-size: 1.6rem;
+        }
+        .col-md-4, .col-md-8 {
+            padding: 15px; /* Reduce padding on small screens */
+        }
+        .text-md-left {
+            text-align: center !important; /* Force center alignment on smaller screens for the left column content */
+        }
     }
   </style>
 </head>
 <body>
   <div class="container">
     <div class="row">
-      <div class="col-md-4">
-        <img src="zhanglongyin_img.jpeg" alt="My Photo" height="200">
-        <h2>Portfolio</h2>
-        <p> Longyin Zhang received his Ph.D. from the <a class="urlstyle" href="https://nlp.suda.edu.cn/">NLP Research Group</a> of <b>Soochow University, China</b> under the supervision of Prof. Fang Kong & Guodong Zhou. He is currently a research scientist under Ms. Aw Ai Ti at <a class="urlstyle" href="https://www.a-star.edu.sg/i2r">I2R</a> (<b>A*STAR, Singapore</b>).</p>
-        <p> He has over seven years of NLP research experience in Discourse Analysis, Entailment Reasoning, and Social Media Text Summarization. He has participated in some collaborative research projects between I2R and key parts of Singapore and has participated in guiding students from NUS and NTU to carry out data analysis work. </p>
-        <p> He is seeking research collaboration with researchers worldwide, especially on discourse-based NLP applications. </p>
-        <p><img class="logo" src="logo1.png" alt="Logo 1"> <img class="logo" src="logo2.png" alt="Logo 2"></p>
-        <p>Email: <b>zhangly@i2r.a-star.edu.sg</b></p>
+      <div class="col-md-4 text-center text-md-left"> <!-- Content in this column will be centered on small screens, left-aligned on medium/large -->
+        <img src="zhanglongyin_img.jpeg" alt="Longyin Zhang's Photo" class="profile-img">
+        <h2>About Me <span class="emoji">👨‍🔬</span></h2>
+        <p>Hello! I'm Longyin Zhang. I received my Ph.D. <span class="emoji">🎓</span> from the <a class="urlstyle" href="https://nlp.suda.edu.cn/">NLP Research Group</a> of <b>Soochow University, China</b> <span class="emoji">🇨🇳</span> under the supervision of Prof. Fang Kong & Guodong Zhou. I am currently a research scientist at <a class="urlstyle" href="https://www.a-star.edu.sg/i2r">I2R</a> (<b>A*STAR, Singapore</b> <span class="emoji">🇸🇬</span>) under Ms. Aw Ai Ti.</p>
+        <p>I have over seven years of NLP research experience <span class="emoji">🧠</span> in Discourse Analysis, Entailment Reasoning, and Social Media Text Summarization. I have participated in some collaborative research projects between I2R and key parts of Singapore, and have guided students from NUS and NTU in data analysis work.</p>
+        <p>I am actively seeking research collaboration <span class="emoji">🤝</span> with researchers worldwide <span class="emoji">🌍</span>, especially on discourse-based NLP applications.</p>
+        <div class="mb-4 d-flex justify-content-center justify-content-md-start align-items-center"> <!-- Flexbox for logo alignment -->
+          <img class="logo" src="logo1.png" alt="Logo 1">
+          <img class="logo" src="logo2.png" alt="Logo 2">
+        </div>
+        <p><span class="emoji">📧</span> Email: <b>zhangly@i2r.a-star.edu.sg</b></p>
       </div>
       <div class="col-md-8">
-        <h1>Projects</h1>
-        <p>
+        <h1>Projects <span class="emoji">🚀</span></h1>
+        <p class="research-item">
           <em>1. Anonymous requested (National Defense Science and Technology Project), 2022-2024;</em> <br>
           <em>2. Neuro-Symbolic AI for Interpretable Natural Language Generation, A*STAR I2R, Singapore, 2022-2023.</em> <br>
-          <em>3. <a class="urlstyle" href="https://github.com/NLP-Discourse-SoochowU">Personal Github Link</a></em>
+          <em>3. <a class="urlstyle" href="https://github.com/NLP-Discourse-SoochowU">Personal Github Link</a> <span class="emoji">🐙</span></em>
         </p>
-        <h1>Research</h1>
-        <p>
-          <b>Longyin Zhang</b>, Bowei Zou, and Aw Ai Ti. Enhancing Event-centric News Cluster Summarization via Data Sharpening and Localization Insights. In Proceedings of ACL 2025. <br>
-          Maodong Li, <b>Longyin Zhang</b>, and Fang Kong. Multi-Hop Question Generation via Dual-Perspective Keyword Guidance. In Proceedings of ACL 2025. <br>
-          <b>Longyin Zhang</b>, Bowei Zou, and Aw Ai Ti. Improving Multilingual Social Media Insights: Aspect-based Comment Analysis. Arxiv 2025. <br>
-          <b>Longyin Zhang</b>, Xin Tan, Fang Kong, and Guodong Zhou. Self-Trained and Self-Purified Data Augmentation for RST Discourse Parsing. In IEEE Transactions on Audio, Speech and Language Processing, doi: 10.1109/TASLPRO.2025.3542300. <br>
-          <b>Longyin Zhang</b>. Research on Discourse Rhetorical Structure Analysis with Multilevel Knowledge Integration (融合多层次知识的篇章修辞结构解析研究). Outstanding Doctoral Dissertation of Jiangsu Province (China). 2019-2024 <br>
-          <b>Longyin Zhang</b>, Bowei Zou, Jacintha Wee Yun Yi, Ai Ti Aw. Comprehensive Abstractive Comment Summarization with Dynamic Clustering and Chain of Thought. In Proceedings of ACL 2024. <br>
-          <b>Longyin Zhang</b>, Bowei Zou, Ai Ti Aw. Empowering Tree-structured Entailment Reasoning: Rhetorical Perception and LLM-driven Interpretability. In Proceedings of LREC-COLING 2024. <br>
-          <b>Longyin Zhang</b>, Xin Tan, Peifeng Li, Fang Kong, and Guodong Zhou. Top-Down Text-­Level Discourse Rhetorical Structure Parsing with Bidirectional Representation Learning. In Journal of Computer Science and Technology (JCST). 2023. <br>
-          Yuqing Xing, <b>Longyin Zhang</b>, Fang Kong, Guodong Zhou. Discourse Parsing Enhanced by Discourse Dependence Perception. In Proceedings of AACL 2022. <br>
-          Xin Tan, <b>Longyin Zhang</b>, Fang Kong, and Guodong Zhou. Towards Discourse-aware Document­level Neural Machine Translation. IJCAI 2022, pages 4383­4389. <br>
-          <b>Longyin Zhang</b>, Fang Kong, and Guodong Zhou. Adversarial Learning for Discourse Rhetorical Structure Parsing. In Proceedings of ACL 2021, pages 3946­-3957. <br>
-          <b>Longyin Zhang</b>, Yuqing Xing, Fang Kong, Peifeng Li, and Guodong Zhou. A Top­-Down Neural Architecture towards Text­Level Parsing of Discourse Rhetorical Structure. In Proceedings of ACL 2020, pages 6386­6395. <br>
-          <b>Longyin Zhang</b>, Xin Tan, Fang Kong, and Guodong Zhou. EDTC: A Corpus for Discourse-­Level Topic Chain Parsing. In Proceedings of EMNLP2021 findings, pages 1304­1312. <br>
-          Xin Tan, <b>Longyin Zhang</b>, and Guodong Zhou. Coupling Context Modeling with Zero Pronoun Recovering for Document­Level Natural Language Generation. EMNLP 2021, pages 2530­2540. <br>
-          <b>Longyin Zhang</b>, Xin Tan, Fang Kong, and Guodong Zhou. Self­-trained and Self-­purified Data Augmentation for RST Discourse Parsing. Accepted by Transactions on Audio, Speech and Language Processing (TASLP). <br>
-          <b>Longyin Zhang</b>, Fang Kong, and Guodong Zhou. Syntax-­Guided Sequence to Sequence Modeling for Discourse Segmentation. In Proceedings of NLPCC 2020, pages 95­107. <br>
-          <b>Longyin Zhang</b>, Xin Tan, Fang Kong, and Guodong Zhou. A Recursive Information Flow Gated Model for RST­-style Text­-level Discourse Parsing. In Proceedings of NLPCC 2019, pages 231­241. 2019. <br>
-          <b>Longyin Zhang</b>, Cheng Sun, Xin Tan, and Fang Kong. RST Discourse Parsing With Tree­-Structured Neural Networks. In Proceedings of CWMT, Communications in Computer and Information Science, vol 954, pages 15­26. 2019. <br>
-          Jinfeng Wang, <b>Longyin Zhang</b>, and Fang Kong. Multi-­Level Cohesion Information Modeling for Better Written and Dialogue Discourse Parsing. NLPCC 2021, pages 40­52. <br>
-          戴倩雯, <b>张龙印</b>, 孔芳. 融合依存关系和篇章修辞关系的事件时序关系识别. 模式识别与人工智能, 32(12):1100­1106. 2019. <br>
-          Xin Tan, <b>Longyin Zhang</b>, Deyi Xiong, and Guodong Zhou. Hierarchical Modeling of Global Context for Document­Level Neural Machine Translation. EMNLP 2019, pages 1576­1585. <br>
-          谭新, 邝少辉, <b>张龙印</b>, 熊德意. 融入汉字笔画序列的神经机器翻译. 厦门大学学报（自然科学版）, 58(2):164­169. 2019. <br>
-        </p>
+        <h1>Research & Publications <span class="emoji">📚</span></h1>
+        <div class="research-list">
+          <!-- Each publication wrapped in its own paragraph for better spacing and list-like appearance -->
+          <p class="research-item">
+            <b>Longyin Zhang</b>, Bowei Zou, and Aw Ai Ti. Enhancing Event-centric News Cluster Summarization via Data Sharpening and Localization Insights. In Proceedings of ACL 2025.
+          </p>
+          <p class="research-item">
+            Maodong Li, <b>Longyin Zhang</b>, and Fang Kong. Multi-Hop Question Generation via Dual-Perspective Keyword Guidance. In Proceedings of ACL 2025.
+          </p>
+          <p class="research-item">
+            <b>Longyin Zhang</b>, Bowei Zou, and Aw Ai Ti. Improving Multilingual Social Media Insights: Aspect-based Comment Analysis. Arxiv 2025.
+          </p>
+          <p class="research-item">
+            <b>Longyin Zhang</b>, Xin Tan, Fang Kong, and Guodong Zhou. Self-Trained and Self-Purified Data Augmentation for RST Discourse Parsing. In IEEE Transactions on Audio, Speech and Language Processing, doi: 10.1109/TASLPRO.2025.3542300.
+          </p>
+          <p class="research-item">
+            <b>Longyin Zhang</b>. Research on Discourse Rhetorical Structure Analysis with Multilevel Knowledge Integration (融合多层次知识的篇章修辞结构解析研究). Outstanding Doctoral Dissertation of Jiangsu Province (China). 2019-2024
+          </p>
+          <p class="research-item">
+            <b>Longyin Zhang</b>, Bowei Zou, Jacintha Wee Yun Yi, Ai Ti Aw. Comprehensive Abstractive Comment Summarization with Dynamic Clustering and Chain of Thought. In Proceedings of ACL 2024.
+          </p>
+          <p class="research-item">
+            <b>Longyin Zhang</b>, Bowei Zou, Ai Ti Aw. Empowering Tree-structured Entailment Reasoning: Rhetorical Perception and LLM-driven Interpretability. In Proceedings of LREC-COLING 2024.
+          </p>
+          <p class="research-item">
+            <b>Longyin Zhang</b>, Xin Tan, Peifeng Li, Fang Kong, and Guodong Zhou. Top-Down Text-Level Discourse Rhetorical Structure Parsing with Bidirectional Representation Learning. In Journal of Computer Science and Technology (JCST). 2023.
+          </p>
+          <p class="research-item">
+            Yuqing Xing, <b>Longyin Zhang</b>, Fang Kong, Guodong Zhou. Discourse Parsing Enhanced by Discourse Dependence Perception. In Proceedings of AACL 2022.
+          </p>
+          <p class="research-item">
+            Xin Tan, <b>Longyin Zhang</b>, Fang Kong, and Guodong Zhou. Towards Discourse-aware Document-level Neural Machine Translation. IJCAI 2022, pages 4383-4389.
+          </p>
+          <p class="research-item">
+            <b>Longyin Zhang</b>, Fang Kong, and Guodong Zhou. Adversarial Learning for Discourse Rhetorical Structure Parsing. In Proceedings of ACL 2021, pages 3946-3957.
+          </p>
+          <p class="research-item">
+            <b>Longyin Zhang</b>, Yuqing Xing, Fang Kong, Peifeng Li, and Guodong Zhou. A Top-Down Neural Architecture towards Text-Level Parsing of Discourse Rhetorical Structure. In Proceedings of ACL 2020, pages 6386-6395.
+          </p>
+          <p class="research-item">
+            <b>Longyin Zhang</b>, Xin Tan, Fang Kong, and Guodong Zhou. EDTC: A Corpus for Discourse-Level Topic Chain Parsing. In Proceedings of EMNLP2021 findings, pages 1304-1312.
+          </p>
+          <p class="research-item">
+            Xin Tan, <b>Longyin Zhang</b>, and Guodong Zhou. Coupling Context Modeling with Zero Pronoun Recovering for Document-Level Natural Language Generation. EMNLP 2021, pages 2530-2540.
+          </p>
+          <p class="research-item">
+            <b>Longyin Zhang</b>, Xin Tan, Fang Kong, and Guodong Zhou. Self-trained and Self-purified Data Augmentation for RST Discourse Parsing. Accepted by Transactions on Audio, Speech and Language Processing (TASLP).
+          </p>
+          <p class="research-item">
+            <b>Longyin Zhang</b>, Fang Kong, and Guodong Zhou. Syntax-Guided Sequence to Sequence Modeling for Discourse Segmentation. In Proceedings of NLPCC 2020, pages 95-107.
+          </p>
+          <p class="research-item">
+            <b>Longyin Zhang</b>, Xin Tan, Fang Kong, and Guodong Zhou. A Recursive Information Flow Gated Model for RST-style Text-level Discourse Parsing. In Proceedings of NLPCC 2019, pages 231-241. 2019.
+          </p>
+          <p class="research-item">
+            <b>Longyin Zhang</b>, Cheng Sun, Xin Tan, and Fang Kong. RST Discourse Parsing With Tree-Structured Neural Networks. In Proceedings of CWMT, Communications in Computer and Information Science, vol 954, pages 15-26. 2019.
+          </p>
+          <p class="research-item">
+            Jinfeng Wang, <b>Longyin Zhang</b>, and Fang Kong. Multi-Level Cohesion Information Modeling for Better Written and Dialogue Discourse Parsing. NLPCC 2021, pages 40-52.
+          </p>
+          <p class="research-item">
+            戴倩雯, <b>张龙印</b>, 孔芳. 融合依存关系和篇章修辞关系的事件时序关系识别. 模式识别与人工智能, 32(12):1100-1106. 2019.
+          </p>
+          <p class="research-item">
+            Xin Tan, <b>Longyin Zhang</b>, Deyi Xiong, and Guodong Zhou. Hierarchical Modeling of Global Context for Document-Level Neural Machine Translation. EMNLP 2019, pages 1576-1585.
+          </p>
+          <p class="research-item">
+            谭新, 邝少辉, <b>张龙印</b>, 熊德意. 融入汉字笔画序列的神经机器翻译. 厦门大学学报（自然科学版）, 58(2):164-169. 2019.
+          </p>
+        </div>
       </div>
     </div>
   </div>
