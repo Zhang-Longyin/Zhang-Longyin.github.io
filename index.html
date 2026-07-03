@@ -75,6 +75,41 @@
       font-weight: 600;
     }
 
+    .hiring-badge {
+      display: inline-block;
+      margin-top: 4px;
+      padding: 7px 14px;
+      border-radius: 999px;
+      background: linear-gradient(110deg, #0b5ed7 0%, #6f42c1 35%, #d63384 50%, #6f42c1 65%, #0b5ed7 100%);
+      background-size: 220% 100%;
+      color: #fff;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      text-decoration: none;
+      box-shadow: 0 4px 12px rgba(111, 66, 193, 0.25);
+      animation: shimmer 3s ease-in-out infinite;
+    }
+
+    .hiring-badge:hover {
+      color: #fff;
+      text-decoration: none;
+      box-shadow: 0 5px 16px rgba(111, 66, 193, 0.35);
+    }
+
+    @keyframes shimmer {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .hiring-badge {
+        animation: none;
+      }
+    }
+
     h2 {
       font-size: 1.8rem; /* Clear H2 size */
       margin-top: 20px;
@@ -194,6 +229,10 @@
         margin-bottom: 4px;
     }
 
+    .main-content > h1:first-child {
+        margin-top: 0;
+    }
+
     /* Column padding for better spacing */
     .col-md-4, .col-md-8 {
         padding: 20px;
@@ -238,6 +277,7 @@
         <a class="urlstyle" href="https://huggingface.co/zzlynxSG">Hugging Face</a>
         <a class="urlstyle" href="mailto:Zhang_Longyin@a-star.edu.sg">Email</a>
       </div>
+      <a class="hiring-badge" href="mailto:Zhang_Longyin@a-star.edu.sg?subject=Research%20Position%20Inquiry">We are hiring!</a>
     </div>
     <div class="row">
       <div class="col-md-4 text-center text-md-left"> <!-- Content in this column will be centered on small screens, left-aligned on medium/large -->
@@ -252,7 +292,7 @@
         </div>
         <p>Email: <b>Zhang_Longyin@a-star.edu.sg</b></p>
       </div>
-      <div class="col-md-8">
+      <div class="col-md-8 main-content">
         <h1>Research Focus</h1>
         <div class="focus-grid">
           <div class="focus-card">
