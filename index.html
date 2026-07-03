@@ -156,6 +156,33 @@
         line-height: 1.5; /* Good line height for text-heavy sections */
     }
 
+    .focus-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+        margin-bottom: 20px;
+    }
+
+    .focus-card {
+        border: 1px solid #e9ecef;
+        border-radius: 8px;
+        padding: 14px;
+        background: #fbfcfd;
+    }
+
+    .focus-card h3 {
+        color: #212529;
+        font-family: 'Poppins', sans-serif;
+        font-size: 1rem;
+        margin-bottom: 8px;
+    }
+
+    .focus-card p {
+        color: #495057;
+        font-size: 0.95rem;
+        margin-bottom: 0;
+    }
+
     /* Column padding for better spacing */
     .col-md-4, .col-md-8 {
         padding: 20px;
@@ -176,6 +203,9 @@
         }
         h2 {
             font-size: 1.6rem;
+        }
+        .focus-grid {
+            grid-template-columns: 1fr;
         }
         .col-md-4, .col-md-8 {
             padding: 15px; /* Reduce padding on small screens */
@@ -212,6 +242,26 @@
         <p>Email: <b>zhangly@i2r.a-star.edu.sg</b></p>
       </div>
       <div class="col-md-8">
+        <h1>Research Focus</h1>
+        <div class="focus-grid">
+          <div class="focus-card">
+            <h3>Discourse-aware NLP</h3>
+            <p>Discourse parsing, discourse-aware generation, summarization, and entailment reasoning beyond isolated sentences.</p>
+          </div>
+          <div class="focus-card">
+            <h3>Culturally-aware Multimodal LLMs</h3>
+            <p>SEA-focused models and benchmarks that capture local visual, acoustic, linguistic, and cultural signals.</p>
+          </div>
+          <div class="focus-card">
+            <h3>Perception-Reasoning Trade-offs</h3>
+            <p>Studying how System-2-style reasoning improves abstract tasks while causing temporal drift or visual over-interpretation.</p>
+          </div>
+          <div class="focus-card">
+            <h3>Cross-modal Temporal Reasoning</h3>
+            <p>Event-aware long-video reasoning with physical-time grounding, audio-visual retrieval, and efficient temporal attention.</p>
+          </div>
+        </div>
+
         <h1>Projects</h1>
         <p class="research-item">
           <em>1. Singapore’s National Multimodal Large Language Model Programme (<a class="urlstyle" href="https://www.a-star.edu.sg/i2r/research/I2RTechs/research/i2r-techs-solutions/meralion-is-available-for-download-from-hugging-face">MERaLion</a>). <b>I am responsible for building the visual recognition and reasoning capabilities</b>, 2025-;</em><br>
