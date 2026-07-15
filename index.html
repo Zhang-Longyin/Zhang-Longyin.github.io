@@ -265,21 +265,6 @@
             text-align: center !important; /* Force center alignment on smaller screens for the left column content */
         }
     }
-    @media print {
-      video {
-        max-width: 100%;
-        page-break-inside: avoid;
-      }
-      .container {
-        box-shadow: none;
-        margin: 0;
-        padding: 10px;
-        max-width: 100%;
-      }
-      body {
-        background: #fff;
-      }
-    }
   </style>
 </head>
 <body>
@@ -350,7 +335,7 @@
         <h1>Demo</h1>
         <p>Here is a brief demo showcasing recent work on MERaLiON-Omni, including visual recognition, multilingual instruction following, and culturally-aware multimodal reasoning.</p>
         <div style="margin-bottom: 25px; box-shadow: 0 5px 15px rgba(0,0,0,.08); border-radius: 8px; overflow: hidden;">
-            <video style="width: 100%; display: block;" controls poster="record-poster.jpg">
+            <video style="width: 100%; display: block;" controls>
                 <source src="record.mp4" type="video/mp4">
                 Your browser does not support the video tag. Please try a different browser.
             </video>
